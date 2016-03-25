@@ -3,6 +3,8 @@
 
 created by [ccforeverd](https://github.com/ccforeverd)
 
+果仁宝公司前端团队公用资源
+
 
 ## library
 
@@ -22,4 +24,4 @@ created by [ccforeverd](https://github.com/ccforeverd)
 
 ## zSass
 
-一个sass库, 用于简化和规范化开发
+一个sass库, 用于简化和规范化开发, write by [ccforeverd](https://github.com/ccforeverd)
