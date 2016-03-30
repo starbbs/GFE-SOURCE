@@ -1,0 +1,41 @@
+{
+  "name": "source",
+  "version": "1.0.0",
+  "description": "果仁宝前端公用资源",
+  "main": "false",
+  "scripts": {
+    "test": "false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starbbs/GFE-source.git"
+  },
+  "keywords": [
+    "果仁宝",
+    "前端"
+  ],
+  "author": "ccforeverd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/starbbs/GFE-source/issues"
+  },
+  "homepage": "https://github.com/starbbs/GFE-source#readme",
+  "amd": {
+    "api": "{{PATH_LIBRARY}}/api",
+    "authorization": "{{PATH_LIBRARY}}/authorization",
+    "check": "{{PATH_LIBRARY}}/check",
+    "mydate": "{{PATH_LIBRARY}}/mydate",
+    "cookie": "{{PATH_LIBRARY}}/cookie",
+    "filters": "{{PATH_LIBRARY}}/filters",
+    "get": "{{PATH_LIBRARY}}/get",
+    "url": "{{PATH_LIBRARY}}/url",
+    "hchart": "{{PATH_LIBRARY}}/src/highcharts",
+    "mmRouter": "{{PATH_LIBRARY}}/src/mmRouter",
+    "mmHistory": "{{PATH_LIBRARY}}/src/mmHistory",
+    "iScroll4": "{{PATH_LIBRARY}}/src/iscroll4",
+    "router": "{{PATH_LIBRARY}}/router",
+    "hashMap": "{{PATH_LIBRARY}}/hashMap",
+    "iscrollLoading": "{{PATH_LIBRARY}}/iscrollLoading",
+    "touch-slide": "{{PATH_LIBRARY}}/src/TouchSlide.1.1.source"
+  }
+}
