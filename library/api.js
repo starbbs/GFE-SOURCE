@@ -358,5 +358,8 @@ define('api', ['cookie', 'filters', 'h5-alert', 'h5-wait'], function() {
 		ignoreStatus: [304] // 忽略304错误
 	});
 
+	//85.获取用户支付密码锁定状态
+	add('checkPayPasswordStatus', '/security/checkPayPasswordStatus');
+	
 	return api;
 });
