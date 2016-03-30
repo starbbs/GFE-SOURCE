@@ -40,6 +40,7 @@
 			'router':			PATH_LIBRARY + '/router',
 			'hashMap':			PATH_LIBRARY + '/hashMap',
 			'iscrollLoading':	PATH_LIBRARY + '/iscrollLoading',
+			'highChartsSet':	PATH_LIBRARY + '/highChartsSet',
 			'touch-slide':		PATH_LIBRARY + '/src/TouchSlide.1.1.source',
 			// PC端部分
 			'bank':				PATH_COMPONENTS + '/bank/bank',
@@ -53,9 +54,9 @@
 			'tabs':				PATH_COMPONENTS + '/tabs/tabs',
 			'top':				PATH_COMPONENTS + '/top/top',
 			// H5微信端部分
-			'h5-check':					H5_SOURCE + '/js/check',
-			'h5-price':					H5_SOURCE + '/js/price',
-			'h5-weixin':				H5_SOURCE + '/js/weixin',
+			'h5-check':					H5_SOURCE + '/library/check',
+			'h5-price':					H5_SOURCE + '/library/price',
+			'h5-weixin':				H5_SOURCE + '/library/weixin',
 			'h5-alert':					H5_COMPONENTS + '/alert/alert',
 			'h5-bank':					H5_COMPONENTS + '/bank/bank',
 			'h5-ident':					H5_COMPONENTS + '/ident/ident',

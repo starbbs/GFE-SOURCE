@@ -360,6 +360,9 @@ define('api', ['cookie', 'filters', 'h5-alert', 'h5-wait'], function() {
 
 	//85.获取用户支付密码锁定状态
 	add('checkPayPasswordStatus', '/security/checkPayPasswordStatus');
-	
+
+	//86.年华收益
+	add('annualIncomeWealth', '/myWealth/annualIncomeWealth');
+
 	return api;
 });
