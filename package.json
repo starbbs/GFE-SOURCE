@@ -4,7 +4,7 @@
   "description": "果仁宝前端公用资源",
   "main": "false",
   "scripts": {
-    "test": "false"
+    "test": ""
   },
   "repository": {
     "type": "git",
@@ -12,8 +12,10 @@
   },
   "keywords": [
     "果仁宝",
-    "前端"
-  ],
+    "前端",
+    "张树垚",
+    "ccforeverd",
+ ],
   "author": "ccforeverd",
   "license": "ISC",
   "bugs": {
