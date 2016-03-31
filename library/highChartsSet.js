@@ -3,8 +3,10 @@
  * Released under MIT license, http://cubiq.org/license
  */
 define('highChartsSet', ['hchart'], function() {
-	highChartsSet = {};
+	var highChartsSet = {};
 	highChartsSet.set = function(obj,options){
+		var obj = obj;
+		var options = options;
 		if(!id)return;
 		obj.highcharts({
 			chart: options.chart || {
