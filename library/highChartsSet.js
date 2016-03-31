@@ -7,43 +7,31 @@ define('highChartsSet', ['hchart'], function() {
 	highChartsSet.set = function(obj,options){
 		if(!id)return;
 		obj.highcharts({
-			chart: {
+			chart: options.chart || {
 				// type: 'areaspline' // 带阴影的线
 			},
 			colors:options.colors || ['#3d70ee'],
-			title: {
-				text: options.text || ''
+			title: options.title || {
+				text: ''
 			},
-			subtitle: {
-				text: options.text || ''
+			subtitle: options.subtitle || {
+				text: ''
 			},
-			legend: {
+			legend: options.legend || {
 				x: options.x || 150,
 				y: options.y || 100,
 			},
-			xAxis: {
+			xAxis: options.xAxis || {
 				// tickInterval: 3, // x坐标轴脚标间隔
-				tickInterval: (function() {
-					return chartData.length - 1;
-				})(),
-				labels: {
-					formatter: function() {
-						return chartDate[this.value];
-					}
-				}
+				tickInterval: 3,
+				labels: {}
 			},
-			yAxis: {
+			yAxis: options.yAxis || {
 				title: {
 					text: ''
 				},
-				tickInterval: (function() {
-					return avalon.filters.fix(Math.round(Math.max.apply(Math, chartData) * 1.1) / 4);
-				})(),
-				labels: {
-					formatter: function() {
-						return this.value.toFixed(2);
-					}
-				}
+				tickInterval: 3,
+				labels: {}
 			},
 			plotOptions:options.plotOptions ||  {
 				series: {
@@ -64,9 +52,9 @@ define('highChartsSet', ['hchart'], function() {
 					}
 				}
 			},
-			series:options.series ||  [{
-				name: '历史价格',
-				data: chartData
+			series: options.series ||  [{
+				name: '',
+				data: null
 			}]
 		});		
 	};
