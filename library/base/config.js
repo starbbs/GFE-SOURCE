@@ -54,6 +54,7 @@
 			'tabs':				PATH_COMPONENTS + '/tabs/tabs',
 			'top':				PATH_COMPONENTS + '/top/top',
 			// H5微信端部分
+			'h5-api':					H5_SOURCE + '/library/h5-api',
 			'h5-check':					H5_SOURCE + '/library/check',
 			'h5-price':					H5_SOURCE + '/library/price',
 			'h5-weixin':				H5_SOURCE + '/library/weixin',
