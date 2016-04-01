@@ -5,9 +5,7 @@
 define('highChartsSet', ['hchart'], function() {
 	var highChartsSet = {};
 	highChartsSet.set = function(obj,options){
-		var obj = obj;
-		var options = options;
-		if(!id)return;
+		if(!obj)return;
 		obj.highcharts({
 			chart: options.chart || {
 				// type: 'areaspline' // 带阴影的线

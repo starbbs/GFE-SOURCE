@@ -6,10 +6,10 @@
 define('api', ['cookie', 'filters', 'h5-alert', 'h5-wait'], function() {
 
 	// var basePath = '.'; // 同域
-	 var basePath = 'http://116.213.142.89:8080'; // http测试服务器
+	 // var basePath = 'http://116.213.142.89:8080'; // http测试服务器
 	// var basePath = 'https://endpoint.goopal.com.cn'; // https正式服务器
 	// var basePath = 'https://www.yuxiaojian.cn'; // https测试服务器
-
+	var basePath = 'https://endpoint.goopal.com.cn/'; //gourenbao 1.1版的服务器(正式)
 	/** [api 接口集合] */
 	var api = {};
 
