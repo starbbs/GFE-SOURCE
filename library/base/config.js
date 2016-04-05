@@ -24,8 +24,8 @@
 			// 公用部分
 			'api':				PATH_LIBRARY + '/api',
 			'authorization':	PATH_LIBRARY + '/authorization',
+			'bind': 			PATH_LIBRARY + '/bind',
 			'check':			PATH_LIBRARY + '/check',
-			'mydate':           PATH_LIBRARY + '/mydate',
 			'cookie':			PATH_LIBRARY + '/cookie',
 			'dom':				PATH_LIBRARY + '/dom',
 			'filters':			PATH_LIBRARY + '/filters',
@@ -35,6 +35,7 @@
 			'm':				PATH_LIBRARY + '/api',
 			'mmRouter':			PATH_LIBRARY + '/src/mmRouter',
 			'mmHistory':		PATH_LIBRARY + '/src/mmHistory',
+			'mydate':			PATH_LIBRARY + '/mydate',
 			'iScroll4':			PATH_LIBRARY + '/src/iscroll4',
 			'module':			PATH_LIBRARY + '/api',
 			'router':			PATH_LIBRARY + '/router',
