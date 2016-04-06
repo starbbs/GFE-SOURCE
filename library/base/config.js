@@ -60,13 +60,14 @@
 			'h5-price':					H5_SOURCE + '/library/price',
 			'h5-weixin':				H5_SOURCE + '/library/weixin',
 			'h5-alert':					H5_COMPONENTS + '/alert/alert',
+			'h5-button': 				H5_COMPONENTS + '/button/button',
 			'h5-bank':					H5_COMPONENTS + '/bank/bank',
 			'h5-ident':					H5_COMPONENTS + '/ident/ident',
 			'h5-text':					H5_COMPONENTS + '/text/text',
 			'h5-paypass':				H5_COMPONENTS + '/paypass/paypass',
 			'h5-wait':					H5_COMPONENTS + '/wait/wait',
 			'h5-component-bill':		H5_COMPONENTS + '/bill/bill',
-			'h5-component-keyboard':	H5_COMPONENTS + '/keyboard/keyboard',
+			'h5-keyboard':	H5_COMPONENTS + '/keyboard/keyboard',
 			'h5-dialog':				H5_DIALOGS + '/dialog',
 
 			//添加对话

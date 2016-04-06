@@ -28,18 +28,23 @@ define(function() {
 	Bind.prototype.setHandles = function(json) {
 		this.handles = json;
 	};
-	Bind.prototype.scan = function(context) {
+	Bind.prototype.scan = function(context, ifRemoveAttr) {
+		if (typeof context === 'boolean') {
+			ifRemoveAttr = context;
+			context = undefined;
+		}
 		//data-keyboard="hide(contacts-search-input,id1,id2)|hide(other-input,id3)"
 		$('[data-' + this.name + ']', context).each(function(i, element) {
 			element.dataset[this.formatName].split('|').forEach(function(string) { //遍历属性上的方法
-				var match = string.match(/(\w+)(\(([\w\,\-]+)\))?/);
+				var match = string.match(/(\w+)(\(([^\)]+)\))?/);
 				// ["hide(contacts-search-input,id1,id2)", "hide", "(contacts-search-input,id1,id2)", "contacts-search-input,id1,id2"]
 				if (match && this.handles && match[1] in this.handles) { // 匹配成功且方法存在
 					this.handles[match[1]].apply(element, match[3] ? match[3].split(',') : []); // handles里的this指向该元素
 				} else {
-					cconsole.log('Error in Bind: name=' + this.name + ' 匹配失败');
+					console.log('Error in Bind: name=' + this.name + ' 匹配失败');
 				}
 			}.bind(this));
+			ifRemoveAttr && element.removeAttribute('data-' + this.name);
 		}.bind(this));
 	};
 
