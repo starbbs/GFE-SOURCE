@@ -10,9 +10,8 @@ created by [ccforeverd](https://github.com/ccforeverd)
 
 > 公用代码库, 文件夹分为:
 
-- base  直接引入页面中的js
+- base  直接引入页面中的js(稍后会去掉)
 - src   从网上下载的js库,插件等
-- api   各种接口集合
 - check 各种校验集合
 - tools 各种工具,插件等
 
