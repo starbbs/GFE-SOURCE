@@ -49,8 +49,8 @@
 			'h5-price':					H5_SOURCE + '/library/price',
 			'h5-weixin':				H5_SOURCE + '/library/weixin',
 			'h5-authorization':			H5_SOURCE + '/library/authorization',
-			'h5-paypass-judge': 		H5_SOURCE + '/library/h5-paypass-judge',
-			'h5-order-judge': 			H5_SOURCE + '/library/h5-order-judge',
+			'h5-paypass-judge': 		H5_SOURCE + '/library/paypass-judge',
+			'h5-order-judge': 			H5_SOURCE + '/library/order-judge',
 			// H5微信端部分 components
 			'h5-alert':					H5_COMPONENTS + '/alert/alert',
 			'h5-button': 				H5_COMPONENTS + '/button/button',
