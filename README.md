@@ -6,6 +6,13 @@ created by [ccforeverd](https://github.com/ccforeverd)
 > 果仁宝公司前端团队公用资源
 
 
+## document
+
+> 文档
+
+- 
+
+
 ## library
 
 > 公用代码库, 文件夹分为:
@@ -23,4 +30,7 @@ created by [ccforeverd](https://github.com/ccforeverd)
 
 ## zSass
 
-> 一个sass库, 用于简化和规范化开发, write by [ccforeverd](https://github.com/ccforeverd)
+> 一个sass库, 用于简化和规范化开发, 项目地址: <https://github.com/ccforeverd/zSass>
+
+
+
