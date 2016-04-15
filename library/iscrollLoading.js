@@ -3,7 +3,6 @@
  * Released under MIT license, http://cubiq.org/license
  */
 define('iscrollLoading', ['iScroll4'], function(iScroll4) {
-	var bottomHeight = 20; // 下拉加载的高度
 	var iscrollLoading = {};
 
 	//以下 上拉  下拉刷新的  业务函数	
@@ -14,7 +13,7 @@ define('iscrollLoading', ['iScroll4'], function(iScroll4) {
 	iscrollLoading.scrollEnd = function() {}; //滑动完成后	
 	iscrollLoading.downLoadingData = function() {}; //下拉加载数据API
 	iscrollLoading.upLoadingData = function() {}; //上拉加载数据API
-
+	iscrollLoading.bottomHeight = iscrollLoading.bottomHeight || 20;    // 下拉加载的高度
 	//添加订阅事件用的
 	['onBeforeScrollStart', 'onScrollMove', 'onBeforeScrollEnd', 'onScrollEnd'].forEach(function(name) {
 		iscrollLoading[name] = [];
@@ -60,7 +59,7 @@ define('iscrollLoading', ['iScroll4'], function(iScroll4) {
 			},
 			onScrollEnd: function() {
 				//长帐单
-				if (this.y < 0 && (this.y - bottomHeight < this.maxScrollY) && options.userDown) {
+				if (this.y < 0 && (this.y - iscrollLoading.bottomHeight < this.maxScrollY) && options.userDown) {
 					iscrollLoading.scrollEnd && iscrollLoading.scrollEnd();
 				}
 				iscrollLoading['onScrollEnd'].length && iscrollLoading['onScrollEnd'].forEach(function(cbFn) {
