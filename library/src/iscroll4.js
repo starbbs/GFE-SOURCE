@@ -187,7 +187,6 @@
 			var that = this,
 				doc = document,
 				bar;
-
 			if (!that[dir + 'Scrollbar']) {
 				if (that[dir + 'ScrollbarWrapper']) {
 					if (hasTransform) that[dir + 'ScrollbarIndicator'].style[vendor + 'Transform'] = '';
@@ -622,7 +621,6 @@
 
 				return;
 			}
-
 			that.scrollTo(resetX, resetY, time || 0);
 		},
 
