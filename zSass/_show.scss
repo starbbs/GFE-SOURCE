@@ -71,7 +71,7 @@ $show-unit: "s" !default;					// 时间默认单位
 	@if not $after { // 不在之后添加运动
 		@include transition($time, $delay);
 	}
-	$selector: if($isSelf, &#{$name}, #{$name} &);
+	$selector: if($isSelf, &#{$name}, unquote("#{$name} #{&}"));
 	@at-root {
 		#{$selector} {
 			@if $after {
@@ -84,7 +84,7 @@ $show-unit: "s" !default;					// 时间默认单位
 
 
 @mixin show-animation($aniname, $aniopt, $isSelf: false, $name: $show-name) {
-	$selector: if($isSelf, &#{$name}, #{$name} &);
+	$selector: if($isSelf, &#{$name}, unquote("#{$name} #{&}"));
 	@at-root {
 		#{$selector} {
 			// @include animation($aniname, $aniopt);
