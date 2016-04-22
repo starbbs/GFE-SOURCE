@@ -75,21 +75,21 @@ define('api', function() {
 				dataType: 'json',
 				timeout: api._timeout,
 				success: function(data) {
-					if (api.options.onSuccess && api.options.onSuccess.call(this, data, options) === false) {
+					if (api.options.onSuccess && api.options.onSuccess.call(api, data, options) === false) {
 						return false;
 					}
-					options.callback && options.callback.call(this, data, options);
-					success && success.call(this, data, options);
+					options.callback && options.callback.call(api, data, options);
+					success && success.call(api, data, options);
 				},
 				error: function() {
 					console.log('Error: ', arguments);
-					if (api.options.onError && api.options.onError.apply(this, arguments)) {
+					if (api.options.onError && api.options.onError.apply(api, arguments)) {
 						return false;
 					}
-					error && error.apply(this, arguments);
+					error && error.apply(api, arguments);
 				},
 				complete: function() {
-					api.options.onComplete && api.options.onComplete.apply(this, arguments);
+					api.options.onComplete && api.options.onComplete.apply(api, arguments);
 					xhr = null;
 				}
 			});
