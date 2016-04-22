@@ -34,7 +34,7 @@ define('api', function() {
 			''
 		);
 	};
-	/** [add 添加接口]
+	/** [add regist]
 	 * @Author   张树垚
 	 * @Date     2015-10-13
 	 * @param    {[string]}		      name                     [api名称]
@@ -74,21 +74,22 @@ define('api', function() {
 				data: api._useJSON ? JSON.stringify(data) : data,
 				dataType: 'json',
 				timeout: api._timeout,
-				success: function() {
-					if (api.onSuccess && api.onSuccess.apply(this, arguments) === false) {
+				success: function(data) {
+					if (api.options.onSuccess && api.options.onSuccess.call(this, data, options) === false) {
 						return false;
 					}
-					options.callback && options.callback.apply(this, arguments);
-					success && success.apply(this, arguments);
+					options.callback && options.callback.call(this, data, options);
+					success && success.call(this, data, options);
 				},
 				error: function() {
 					console.log('Error: ', arguments);
-					if (api.onError && api.onError.apply(this, arguments)) {
+					if (api.options.onError && api.options.onError.apply(this, arguments)) {
 						return false;
 					}
 					error && error.apply(this, arguments);
 				},
 				complete: function() {
+					api.options.onComplete && api.options.onComplete.apply(this, arguments);
 					xhr = null;
 				}
 			});
