@@ -3,7 +3,7 @@
 
 
 
-define('api', function() {
+define('api', [], function() {
 
 
 	var Api = function(options) {
