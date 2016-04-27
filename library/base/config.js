@@ -50,6 +50,7 @@
 			'h5-weixin':				H5_SOURCE + '/library/weixin',
 			'h5-authorization':			H5_SOURCE + '/library/authorization',
 			'h5-paypass-judge': 		H5_SOURCE + '/library/paypass-judge',
+			'h5-paypass-judge-auto': 	H5_SOURCE + '/library/paypass-judge-auto',
 			'h5-order-judge': 			H5_SOURCE + '/library/order-judge',
 			'h5-login-judge': 			H5_SOURCE + '/library/login-judge',
 			'h5-login-judge-auto': 		H5_SOURCE + '/library/login-judge-auto',
