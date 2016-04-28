@@ -54,6 +54,7 @@
 			'h5-order-judge': 			H5_SOURCE + '/library/order-judge',
 			'h5-login-judge': 			H5_SOURCE + '/library/login-judge',
 			'h5-login-judge-auto': 		H5_SOURCE + '/library/login-judge-auto',
+			'h5-paypass-judge-auto':    H5_SOURCE + '/library/paypass-judge-auto',
 			// H5微信端部分 components
 			'h5-alert':					H5_COMPONENTS + '/alert/alert',
 			'h5-button': 				H5_COMPONENTS + '/button/button',
