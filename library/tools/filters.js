@@ -36,8 +36,11 @@ define('filters', ['check'], function(check) {
 		floorFix: function(str, length) { // 去尾后保留多少位小数
 			return fix('floor', str, length);
 		},
-		ceilFix: function(str, length) { // 进一后保留多少位小数
-			return fix('ceil', str, length);
+		ceilFix: function(str, length) { // 向上进一后保留多少位小数
+			if(str===0){
+				return;
+			}
+			return ((str+'').split('.')[1].length === 2)? str : fix('ceil', str, length);
 		},
 		tail: function(str, length) { // 尾数
 			str = typeof str !== 'string' ? '' : parseFloat(str);
