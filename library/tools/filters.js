@@ -3,7 +3,7 @@
 
 
 define('filters', ['check'], function(check) {
-
+	// filters 里面所有方法返回的所有都是string类型
 	var filters = avalon.filters;
 
 	var fix = function(name, str, length) { // 保留小数位
