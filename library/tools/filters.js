@@ -49,7 +49,7 @@ define('filters', ['check'], function(check) {
 		omit: function(str, length, replace) { // 省略
 			var l = 5; // 默认保留长度
 			length = isNaN(parseInt(length)) ? l : parseInt(length); //没传length isNaN()返回true
-			return str.length > 5 ? (str.substring(0, length) + (replace || '...')) : str;
+			return str.length > length ? (str.substring(0, length) + (replace || '...')) : str;
 		},
 		address: function(str, length) { // 地址省略
 			return filters.omit(str, 8, '**********');
