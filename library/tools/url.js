@@ -25,7 +25,7 @@ define('url', function() {
 	var filename = json.filename = arr[arr.length - 1] || ''; // account.html
 	var dirname = json.dirname = arr[arr.length - 2] || ''; // build
 	var extname = json.extname = filename.split('.').reverse()[0]; // html
-	var basename = json.basename = filename.replace(new RegExp('\\.' + extname + '$'), ''); // account.html
+	var basename = json.basename = filename.replace(new RegExp('\\.' + extname + '$'), ''); // account
 	var url = json.url = origin + pathname; // http://localhost/h5/build/account.html
 
 	var log = function(name, isURL) {
