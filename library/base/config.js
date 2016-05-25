@@ -88,7 +88,8 @@
 			'h5-view-login':			H5_VIEWS + '/login/login',
 			'h5-view-password':			H5_VIEWS + '/password/password',
 			'h5-view-nickname':			H5_VIEWS + '/nickname/nickname',
-			'h5-paypass-view':          H5_VIEWS + '/paypass/paypass-view'
+			'h5-paypass-view':          H5_VIEWS + '/paypass/paypass-view',
+			'h5-view-coupon':           H5_VIEWS + '/coupon/coupon',
 		},
 		shim: {
 			jquery: {
