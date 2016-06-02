@@ -68,11 +68,16 @@ define('api', [], function() {
 				data = {};
 			}
 			// console.log(url);
+			var isasyn = true;
+			if(typeof options.asyn =="boolean" && options.asyn){
+				isasyn = false;
+			}
 			return xhr = $.ajax({
 				url: api._baseUri + url,
 				type: 'post',
 				data: api._useJSON ? JSON.stringify(data) : data,
 				dataType: 'json',
+				async:isasyn,
 				timeout: api._timeout,
 				success: function(data) {
 					if (api.options.onSuccess && api.options.onSuccess.call(api, data, options) === false) {
