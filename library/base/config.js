@@ -55,6 +55,8 @@
 			'h5-login-judge': 			H5_SOURCE + '/library/login-judge',
 			'h5-login-judge-auto': 		H5_SOURCE + '/library/login-judge-auto',
 			'h5-config':				H5_SOURCE + '/library/param-config',
+			'h5-md5':					H5_SOURCE + '/library/md5',
+
 			// H5微信端部分 components
 			'h5-alert':					H5_COMPONENTS + '/alert/alert',
 			'h5-button': 				H5_COMPONENTS + '/button/button',
@@ -91,6 +93,7 @@
 			'h5-view-nickname':			H5_VIEWS + '/nickname/nickname',
 			'h5-paypass-view':          H5_VIEWS + '/paypass/paypass-view',
 			'h5-view-coupon':           H5_VIEWS + '/coupon/coupon',
+
 		},
 		shim: {
 			jquery: {
