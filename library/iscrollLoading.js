@@ -13,7 +13,7 @@ define('iscrollLoading', ['iScroll4'], function(iScroll4) {
 	iscrollLoading.scrollEnd = function() {}; //滑动完成后	
 	iscrollLoading.downLoadingData = function() {}; //下拉加载数据API
 	iscrollLoading.upLoadingData = function() {}; //上拉加载数据API
-	iscrollLoading.bottomHeight = iscrollLoading.bottomHeight || 20;    // 下拉加载的高度
+	iscrollLoading.bottomHeight = iscrollLoading.bottomHeight || 20; // 下拉加载的高度
 	//添加订阅事件用的
 	['onBeforeScrollStart', 'onScrollMove', 'onBeforeScrollEnd', 'onScrollEnd'].forEach(function(name) {
 		iscrollLoading[name] = [];
@@ -34,12 +34,12 @@ define('iscrollLoading', ['iScroll4'], function(iScroll4) {
 			fixedScrollbar: true,
 			useTransition: true,
 			click: true,
-			onBeforeScrollStart: function() {
+			onBeforeScrollStart: function() { //滚动前  刚下手 （多事件捆绑onBeforeScrollStart）
 				iscrollLoading['onBeforeScrollStart'].length && iscrollLoading['onBeforeScrollStart'].forEach(function(cbFn) {
 					cbFn();
 				});
 			},
-			onScrollMove: function() {
+			onScrollMove: function() { //移动时候  判断Y位置 及是否允许上拉 （多事件捆绑onScrollMove）
 				if (this.y >= 0 && options.userUp) {
 					iscrollLoading.scrollMove && iscrollLoading.scrollMove();
 				}
@@ -47,7 +47,7 @@ define('iscrollLoading', ['iScroll4'], function(iScroll4) {
 					cbFn();
 				});
 			},
-			onBeforeScrollEnd: function() { //松手时
+			onBeforeScrollEnd: function() { //松手前  上拉判别  （多事件捆绑 onBeforeScrollEnd）
 				if (this.y >= 60 && options.userUp) {
 					iscrollLoading.beforeScrollEndTrue && iscrollLoading.beforeScrollEndTrue();
 				} else {
@@ -57,7 +57,7 @@ define('iscrollLoading', ['iScroll4'], function(iScroll4) {
 					cbFn();
 				});
 			},
-			onScrollEnd: function() {
+			onScrollEnd: function() { //松手及滑动结束后   判断是否下拉  及允许下拉(多事件捆绑 onScrollEnd)
 				//长帐单
 				if (this.y < 0 && (this.y - iscrollLoading.bottomHeight < this.maxScrollY) && options.userDown) {
 					iscrollLoading.scrollEnd && iscrollLoading.scrollEnd();
