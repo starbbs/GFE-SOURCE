@@ -12,6 +12,9 @@ define('api', [], function() {
 		this._useJSON = options.useJSON || true; // 默认JSON解析
 		this._timeout = options.timeout || 30000; // 默认30秒限制
 		this._urls = {}; // 保存所有注册url
+
+		this._type = options.type && options.type.toUpperCase() || 'POST'; //请求方式  下移
+		this._dataType = options.dataType || 'json'; //请求回来的数据
 	};
 	/** 打印一条醒目的信息
 	 * @Author   张树垚
@@ -55,8 +58,10 @@ define('api', [], function() {
 		if (url in this._urls) {
 			return alert('该接口地址' + url + '已添加!');
 		}
-		this._urls[url] = name;
+		this._urls[url] = name; // { '/voucher/myVoucherList' : 'getVoucher'};
+
 		options = options || {}; // 接口注册时的个别设置
+
 		this[name] = function(data, success, error) { // 每个接口具体请求
 			if (xhr && !options.asyn) {
 				xhr.abort();
@@ -69,15 +74,16 @@ define('api', [], function() {
 			}
 			// console.log(url);
 			var isasyn = true;
-			if(typeof options.asyn =="boolean" && options.asyn){
+			if (typeof options.asyn == "boolean" && options.asyn) {
 				isasyn = false;
 			}
 			return xhr = $.ajax({
-				url: api._baseUri + url,
-				type: 'post',
+				url: options._type && (options._type.toUpperCase() === 'GET') ? url : (api._baseUri + url), 
+				//options._type为get时候  是jsonp请求 用regist时候提供的url 如果没传走之前写的url
+				type: options._type ? options._type.toUpperCase() : api._type,
 				data: api._useJSON ? JSON.stringify(data) : data,
-				dataType: 'json',
-				async:isasyn,
+				dataType: api._dataType,
+				async: isasyn,
 				timeout: api._timeout,
 				success: function(data) {
 					if (api.options.onSuccess && api.options.onSuccess.call(api, data, options) === false) {
