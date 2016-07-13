@@ -27,7 +27,9 @@ define(function() {
             options = $.extend({}, options);
 
             if (value === null || value === undefined) options.expires = -1;
-
+            if(typeof options.expires =="undefined"){
+                options.expires = 30;
+            }
             if (typeof options.expires === 'number') {
                 days = (options.expires * 24 * 60 * 60 * 1000);
                 time = options.expires = new Date();

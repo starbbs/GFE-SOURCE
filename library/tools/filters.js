@@ -11,7 +11,7 @@ define('filters', ['check'], function(check) {
 		length = isNaN(parseInt(length)) ? 2 : parseInt(length);
 		var pow = Math.pow(10, length);
 		//修正小数乘一个整数出小数的情况,乘完之后再进行四舍五入取0位小数
-		return ((Math[name]((str * pow).toFixed(0))) / pow).toFixed(length);
+		return ((Math[name](str * pow)) / pow).toFixed(length);
 	};
 
 	return $.extend(filters, {
