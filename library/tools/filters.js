@@ -2,7 +2,7 @@
 // 过滤器
 
 
-define('filters', ['check'], function(check) {
+define('filters', function() {
 	// filters 里面所有方法返回的所有都是string类型
 	var filters = avalon.filters;
 
@@ -56,7 +56,8 @@ define('filters', ['check'], function(check) {
 			return filters.omit(str, 8, '**********');
 		},
 		phone: function(str) { // 手机省略
-			return check.phone(str).result ? String(str).substr(0, 3) + '****' + String(str).substr(-4) : str;
+			var phoneReg = /^((13[0-9])|(14[57])|(15[0-35-9])|(17[0678])|(18[0-9]))\d{8}$/;
+			return phoneReg.test(str) ? String(str).substr(0, 3) + '****' + String(str).substr(-4) : str;
 		},
 	});
 });
