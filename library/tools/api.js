@@ -62,7 +62,7 @@ define('api', [], function() {
 
 		options = options || {}; // 接口注册时的个别设置
 
-		this[name] = function(data, success, error) { // 每个接口具体请求
+		this[name] = function(data, success, error,_isasyn) { // 每个接口具体请求
 			if (xhr && !options.asyn) {
 				xhr.abort();
 				xhr = null;
@@ -74,7 +74,7 @@ define('api', [], function() {
 			}
 			// console.log(url);
 			var isasyn = true;
-			if (typeof options.asyn == "boolean" && options.asyn) {
+			if ((typeof options.asyn == "boolean" && options.asyn) || _isasyn) {
 				isasyn = false;
 			}
 			return xhr = $.ajax({
