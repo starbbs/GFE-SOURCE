@@ -12,6 +12,11 @@ define("mathtool",function(){
         if (Number(_number) !== Number(_number)) {
             return _number;
         }
+        var flag = 1;
+        if(_number<0){
+            flag = -1;
+            _number =_number * -1;
+        }
         var numStr = _number.toString();
         var strArr = numStr.split(".");
         var rightStr = strArr.length>1?strArr[1]:"";
@@ -23,7 +28,7 @@ define("mathtool",function(){
             }
             rightStr = rightStr + addZero.join("");
         }
-        return Number(strArr[0] + rightStr.substring(0, _pointcount) + "." + rightStr.substr(_pointcount));
+        return Number(strArr[0] + rightStr.substring(0, _pointcount) + "." + rightStr.substr(_pointcount)) * flag;
     }
     /**
      * 向左移动小数点,相当于_number除以10的_pointcount次幂
@@ -35,6 +40,11 @@ define("mathtool",function(){
         //判断是否为数字,非数字直接返回本身
         if (Number(_number) !== Number(_number)) {
             return _number;
+        }
+        var flag = 1;
+        if(_number<0){
+            flag = -1;
+            _number =_number * -1;
         }
         //number转换为string ,方便后续操作。
         var numStr = _number.toString();
@@ -55,7 +65,7 @@ define("mathtool",function(){
         if (strArr.length > 1) {
             result += strArr[1];
         }
-        return Number(result);
+        return Number(result) * flag;
     };
     /**
      * 加法
