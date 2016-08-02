@@ -5,13 +5,19 @@
 define('filters', function() {
 	// filters 里面所有方法返回的所有都是string类型
 	var filters = avalon.filters;
-
+	//修正乘法的精度问题
+	var accMul = function(arg1, arg2){
+	    	var m = 0, s1 = arg1.toString(), s2 = arg2.toString();
+        try { m += s1.split(".")[1].length } catch (e) { }
+        try { m += s2.split(".")[1].length } catch (e) { }
+        return Number(s1.replace(".", "")) * Number(s2.replace(".", "")) / Math.pow(10, m);
+    }
 	var fix = function(name, str, length) { // 保留小数位
 		str = isNaN(parseFloat(str)) ? 0 : parseFloat(str);
 		length = isNaN(parseInt(length)) ? 2 : parseInt(length);
 		var pow = Math.pow(10, length);
 		//修正小数乘一个整数出小数的情况,乘完之后再进行四舍五入取0位小数
-		return ((Math[name](str * pow)) / pow).toFixed(length);
+		return ((Math[name](accMul(str , pow))) / pow).toFixed(length);
 	};
 
 	return $.extend(filters, {
@@ -36,9 +42,9 @@ define('filters', function() {
 		floorFix: function(str, length) { // 去尾后保留多少位小数
 			return fix('floor', str, length);
 		},
-		ceilFix: function(str, length) { // 向上进一后保留多少位小数
+		ceilFix: function(str, length, isGop) { // 向上进一后保留多少位小数 最后一个参数默认就是两位，true为果仁数设置为三位
 			if (str === 0 || (str + '').indexOf('.') < 0) {
-				return str + '.00';
+				return (isGop === undefined? (str + '.00') : (str + '.000'));
 			}
 			return ((str + '').split('.')[1].length && (str + '').split('.')[1].length === 2) ? parseFloat(str) : fix('ceil', parseFloat(str), length);
 		},
